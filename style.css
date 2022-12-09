@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
+/* Setting the default values of the elements, later on, we will change the values as needed*/
 *,
 *::after,
 *::before {
@@ -10,25 +11,22 @@
   list-style-type: none;
 }
 
+
+/* Use root selector to create variables in the css file*/
 :root {
   --container: 144rem;
-  --m-auto: 0 auto;
-  --white: #fff;
   --primary: #8a1538;
   --secondary: #eeeee4;
   --gr-1: rgba(138, 21, 56, 0.607);
   --gr-2: rgba(218, 201, 109, 0.665);
-  --blue: #1077C3;
-  --nav: rgba(225, 225, 225, 0.045);
-  --mobile-nav: #7d3e59;
-  --count-down-bg: rgba(238, 235, 235, 0.295);
-  --timer-before-bg: rgb(218, 201, 109);
+  --nav: rgba(138, 21, 56, 0.045);
+  --sub-nav: rgba(238, 235, 235, 0.295);
 }
 
 html {
   font-size: 62.5%;
-  scroll-behavior: smooth;
-  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth; /* Scrolls to the section instead of teleporting there*/
+  font-family: 'Poppins', sans-serif; /* Main font family is Poppings, use sans-serif as fallback*/
 }
 
 /* css to remove the scrollbar*/
@@ -40,21 +38,22 @@ body {
   font-size: 1.6rem;
 }
 
+/* css for paragraphs start here*/
 p {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
+/* css for `s` start here*/
 s {
+  /* Use the default values*/
   text-decoration: line-through;
 }
 
+/* css for `ins` start here*/
 ins {
+  /* Use the default values*/
   text-decoration: underline;
-}
-
-dl {
-  margin-left: 10rem;
 }
 
 .container {
@@ -97,7 +96,7 @@ dl {
 
 .nav_link {
   font-size: 1.6rem;
-  color: var(--white);
+  color: white;
 }
 
 .nav_link.active {
@@ -124,7 +123,7 @@ dl {
 .btn-outline {
   padding: 0.6rem 2rem;
   border: 0.2rem solid var(--secondary);
-  color: var(--white);
+  color: white;
   font-weight: 500;
   border-radius: 3rem;
   transition: all 0.2s ease-in;
@@ -231,7 +230,7 @@ dl {
 }
 
 .sub-navigation ul {
-  background-color: var(--count-down-bg);
+  background-color: var(--sub-nav);
 }
 
 /* side table of content start*/
@@ -369,7 +368,7 @@ video {
 
 /* css for dl, dt, and dd */
 dl {
-  margin:2rem 0 2rem;
+  margin:2rem 0 2rem 3rem;
 }
 
 dt {
