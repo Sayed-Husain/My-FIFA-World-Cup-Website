@@ -1,0 +1,542 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+:root {
+  --container: 144rem;
+  --m-auto: 0 auto;
+  --white: #fff;
+  --primary: #8a1538;
+  --secondary: #eeeee4;
+  --gr-1: rgba(138, 21, 56, 0.607);
+  --gr-2: rgba(218, 201, 109, 0.665);
+  --blue: #1077C3;
+  --nav: rgba(225, 225, 225, 0.045);
+  --mobile-nav: #7d3e59;
+  --count-down-bg: rgba(238, 235, 235, 0.295);
+  --timer-before-bg: rgb(218, 201, 109);
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* css to remove the scrollbar*/
+::-webkit-scrollbar {
+  width: 0;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+p {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+s {
+  text-decoration: line-through;
+}
+
+ins {
+  text-decoration: underline;
+}
+
+dl {
+  margin-left: 10rem;
+}
+
+.container {
+  max-width: var(--container);
+  padding: 0 2rem;
+  margin: 0 0 5rem 0;
+}
+
+#hero {
+  background: linear-gradient(var(--gr-1), var(--gr-2)), url(images/hero-image.png) no-repeat center center / cover;
+}
+
+.header {
+  background: var(--nav);
+  backdrop-filter: blur(10px);
+}
+
+.header-background {
+  background-color: var(--primary);
+}
+
+.navigation {
+  height: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu-bar {
+  width: 7vw;
+  height: 1vw;
+  background-color: black;
+  margin: 1vw 0;
+}
+
+.nav_list {
+  display: inline-block;
+  margin: 0 1rem;
+}
+
+.nav_link {
+  font-size: 1.6rem;
+  color: var(--white);
+}
+
+.nav_link.active {
+  position: relative;
+}
+
+/* code to show which page is open in the navigation*/
+.nav_link.active::before {
+  /* thisd will create a small box, center it, rotate it, and fill it*/
+  position: absolute;
+  content: '';
+  left: 50%;
+  transform: rotate(45deg) translateX(-50%);
+  bottom: -1.5rem;
+  width: 0.7rem;
+  height: 0.7rem;
+  background: var(--secondary);
+}
+
+.btn-nav {
+  margin-left: 5rem;
+}
+
+.btn-outline {
+  padding: 0.6rem 2rem;
+  border: 0.2rem solid var(--secondary);
+  color: var(--white);
+  font-weight: 500;
+  border-radius: 3rem;
+  transition: all 0.2s ease-in;
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.btn-outline:hover {
+  border-color: var(--secondary);
+  color: var(--primary);
+  background: var(--secondary);
+  transition: all 0.2s ease-in;
+}
+
+.hero-main-container {
+  padding: 5rem 0;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  align-items: center;
+}
+
+.hero-image {
+  text-align: center;
+}
+
+.hero-img {
+  max-width: 45rem;
+}
+
+.section-heading {
+  font-size: 5rem;
+  line-height: 6rem;
+  color: var(--secondary);
+}
+
+.standings-heading {
+  padding-top: 2rem;
+  font-size: 4rem;
+}
+
+/* title text and animation css start here*/
+#title {
+  font-size: 5rem;
+  opacity: 0;
+  padding-top: 3vh;
+  padding-bottom: 3vh;
+  text-align: center;
+  color: white;
+  text-shadow: 0.5rem 0.5rem 0.25rem var(--gr-1);
+  animation: revealText 0.1s 0.4s forwards;
+}
+
+.title-div {
+  position: relative;
+}
+
+.title-div .overlay {
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  background-color: var(--gr-2);
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: scaleOverlay 1s forwards cubic-bezier(0.85, 0, 0.15, 1);
+}
+
+@keyframes scaleOverlay {
+  50% {
+    transform: scaleX(1);
+  }
+
+  75% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  76% {
+    transform-origin: right;
+  }
+
+  100% {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+}
+
+@keyframes revealText {
+  to {
+    opacity: 1;
+  }
+}
+
+/* bottom navigation css start*/
+.sub-navigation li {
+  padding: 2rem 2rem 2rem 2rem;
+  background-color: var(--primary);
+  display: inline-block;
+  margin: 2rem 5rem 2rem 5rem;
+}
+
+.sub-navigation ul {
+  background-color: var(--count-down-bg);
+}
+
+/* side table of content start*/
+.sidenav {
+  width: 15%;
+  height: 18%;
+  overflow: scroll;
+  position: fixed;
+  z-index: 1;
+  bottom: 2rem;
+  right: 1rem;
+  background: var(--primary);
+  padding: 8px 0;
+}
+
+.sidenav a {
+  padding: 0.5rem 1rem 0.5rem 2rem;
+  font-size: 2rem;
+  color: white;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #064579;
+}
+
+/* copyright css + place holder for the sidenav*/
+footer .copyright-text{
+  background-color: var(--primary);
+  text-align: center;
+  height:18%;
+  color:white;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-top: 4rem;
+  padding-bottom: 3rem;
+  }
+
+.copyright-text a{
+    color:white;
+    text-decoration: underline;
+    }
+
+/* section image start*/
+.section-image {
+  /* For landscape images*/
+  display: flex;
+  justify-content: center;
+  width: 60%;
+  filter: blur(7px);
+  margin: 2rem auto 5rem auto;
+}
+
+.side-image {
+  /* For square images */
+  float: right;
+  margin: 1rem 2rem 1rem 2rem;
+  padding-right: 2rem;
+  width: 25%;
+}
+
+.img-text-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+/* Video css start*/
+
+video {
+  display: flex;
+  justify-content:center;
+  width: 60%;
+  filter: blur(1px);
+  margin: 2rem auto 5rem auto;
+
+  /* style=" height:50vh; width:auto; max-width:80%;"*/
+}
+
+/* Groups css start here*/
+.groups, .knockout{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom: 3rem;
+  width:100%;
+  overflow:scroll;
+}
+.knockout{
+  align-items: center;
+
+}
+
+.groups dl,
+.knockout dl {
+  margin-right: 3rem;
+}
+
+
+/* Why special ul css start here*/
+.why-special li{
+  list-style-type:"\26BD";
+  padding-bottom: 1rem;
+  padding-left: 0.5rem;
+  margin-left: 5rem;
+
+}
+
+
+
+/* bottom navigation bar start*/
+.vertical-menu {
+  background-color: LightSlateGray;
+  font-weight: bold;
+  width: 100%;
+  padding: 2rem 0 2rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.vertical-menu a {
+  color: white;
+  display: inline-block;
+  padding: 1rem 2rem 1rem 2rem;
+  margin: 1rem 2rem 1rem 2rem;
+}
+
+.vertical-menu a:hover {
+  background-color: #ccc;
+}
+
+.vertical-menu a.active {
+  background-color: DimGrey;
+  color: white;
+}
+
+/* css for dl, dt, and dd */
+dl {
+  margin:2rem 0 2rem;
+}
+
+dt {
+  font-weight:bold;
+}
+dd {
+  margin-right: 1rem;
+  padding:1rem 1rem 1rem 1rem;
+}
+
+/* CSS For teams start*/
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  justify-content: space-around;
+  margin-top: 5rem;
+}
+
+.team {
+  position: relative;
+  flex: 0 0 auto;
+  width: 12%;
+  min-width: 5rem;
+  margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+
+
+.team h3 {
+  text-align: center;
+}
+
+.team img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border:solid ;
+  border-width: 0.2rem;
+  outline-offset: 0;
+  border-color: black;
+}
+
+.team .overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  width: 100%;
+  transition: .5s ease;
+  opacity:0;
+  color: white;
+  font-size: 2rem;
+  padding: 0.1rem;
+  text-align: center;
+}
+
+.team:hover .overlay { /* when viewing the flag of the team, show overlay*/
+  opacity: 1;
+}
+
+/* Competition div css start here*/
+.Competition-div{
+  display:flex;
+  justify-content:space-between;
+}
+
+/* Form css start here*/
+input[type=text], select {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  box-sizing: border-box;
+  margin-top: 0.38rem;
+  margin-bottom: 1rem;
+  resize: vertical;
+}
+
+select{
+  cursor: pointer;
+}
+
+input[type=submit] {
+  background-color: #04AA3F;
+  color: white;
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #35a049;
+}
+
+/* Table css start here */
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+.table{
+  display:flex;
+  align-items:center;
+}
+
+th, td{
+  text-align: left;
+  padding-top: 0.5rem;
+}
+
+/* Media css*/
+@media (max-width: 904px) {
+  .header {
+    display: none;
+  }
+
+  .sidenav {
+    display: none;
+  }
+
+  .vertical-menu {
+    background-color: white;
+    display: block;
+  }
+
+  .vertical-menu a {
+    display: block;
+    margin: 2rem 2rem 2rem;
+    background-color: LightSlateGray;
+  }
+
+  .team {
+    flex: 0 0 auto;
+    width: 25%;
+  }
+
+  .Competition-div{
+    display:block;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-image {
+    grid-row: 1;
+  }
+
+  .hero-img {
+    max-width: 30rem;
+  }
+
+  .img-text-wrapper{
+    display: block;
+  }
+
+  .side-image{
+    float:none;
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    filter: blur(7px);
+    margin: 2rem auto 5rem auto;
+  }
+}

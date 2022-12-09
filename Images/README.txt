@@ -1,0 +1,1 @@
+Unless credited, all images used here are free to use and require not permission.
