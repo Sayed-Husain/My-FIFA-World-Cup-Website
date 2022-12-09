@@ -64,7 +64,7 @@ dl {
 }
 
 #hero {
-  background: linear-gradient(var(--gr-1), var(--gr-2)), url(images/hero-image.png) no-repeat center center / cover;
+  background: linear-gradient(var(--gr-1), var(--gr-2)), url(Images/hero-image.png) no-repeat center center / cover;
 }
 
 .header {
