@@ -63,12 +63,13 @@ ins {
 }
 
 #hero {
+  /* Add background image to the hero container, center it and make the background area completly covered by the image. Add gradient effect on top*/
   background: linear-gradient(var(--gr-1), var(--gr-2)), url(Images/hero-image.png) no-repeat center center / cover;
 }
 
 .header {
   background: var(--nav);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px); /* Add blur effect to the area behind the element*/
 }
 
 .header-background {
@@ -99,7 +100,7 @@ ins {
   color: white;
 }
 
-.nav_link.active {
+.nav_link.active { /* the navigation page that we are currently in*/
   position: relative;
 }
 
@@ -129,7 +130,6 @@ ins {
   transition: all 0.2s ease-in;
   display: inline-flex;
   align-items: center;
-  gap: 1rem;
 }
 
 .btn-outline:hover {
@@ -141,27 +141,9 @@ ins {
 
 .hero-main-container {
   padding: 5rem 0;
+  height: 70vh;
 }
 
-.hero-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-  align-items: center;
-}
-
-.hero-image {
-  text-align: center;
-}
-
-.hero-img {
-  max-width: 45rem;
-}
-
-.section-heading {
-  font-size: 5rem;
-  line-height: 6rem;
-  color: var(--secondary);
-}
 
 .standings-heading {
   padding-top: 2rem;
@@ -195,6 +177,7 @@ ins {
   animation: scaleOverlay 1s forwards cubic-bezier(0.85, 0, 0.15, 1);
 }
 
+/* Animation for the overlay movement*/
 @keyframes scaleOverlay {
   50% {
     transform: scaleX(1);
@@ -215,6 +198,7 @@ ins {
   }
 }
 
+/* Animation for the apperance of the text*/
 @keyframes revealText {
   to {
     opacity: 1;
@@ -338,8 +322,6 @@ video {
 
 }
 
-
-
 /* bottom navigation bar start*/
 .vertical-menu {
   background-color: LightSlateGray;
@@ -439,7 +421,7 @@ dd {
 }
 
 /* Form css start here*/
-input[type=text], select {
+input[type=text], select { /* for input element of type text and for select*/
   width: 100%;
   padding: 1rem;
   border: 1px solid #ccc;
@@ -454,7 +436,7 @@ select{
   cursor: pointer;
 }
 
-input[type=submit] {
+input[type=submit] { /* For input element of type submit*/
   background-color: #04AA3F;
   color: white;
   padding: 0.75rem 1.25rem;
@@ -463,12 +445,12 @@ input[type=submit] {
   cursor: pointer;
 }
 
-input[type=submit]:hover {
+input[type=submit]:hover { /* Hover on input element of type submit*/
   background-color: #35a049;
 }
 
-/* Table css start here */
 
+/* Table css start here */
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -483,7 +465,7 @@ table {
 
 th, td{
   text-align: left;
-  padding-top: 0.5rem;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem; /* Add padding all around the cell*/
 }
 
 /* Media css*/
