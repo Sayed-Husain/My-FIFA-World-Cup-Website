@@ -29,7 +29,7 @@ html {
   font-family: 'Poppins', sans-serif; /* Main font family is Poppings, use sans-serif as fallback*/
 }
 
-/* css to remove the scrollbar*/
+/* css to remove the scrollbar */
 ::-webkit-scrollbar {
   width: 0;
 }
@@ -106,7 +106,7 @@ ins {
 
 /* code to show which page is open in the navigation*/
 .nav_link.active::before {
-  /* thisd will create a small box, center it, rotate it, and fill it*/
+  /* this will create a small box, center it, rotate it, and fill it*/
   position: absolute;
   content: '';
   left: 50%;
@@ -365,7 +365,6 @@ dd {
 .row {
   display: flex;
   flex-wrap: wrap;
-  flex-shrink: 0;
   width: 100%;
   max-width: 100%;
   justify-content: space-around;
@@ -390,7 +389,7 @@ dd {
   width: 100%;
   height: auto;
   aspect-ratio: 16 / 9;
-  border:solid ;
+  border:solid;
   border-width: 0.2rem;
   outline-offset: 0;
   border-color: black;
