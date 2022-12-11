@@ -5,7 +5,7 @@ My FIFA World Cup website
 
 
 ## SiteMap
-![image](git/Diagrams/sitemap.png)
+![image](git/Diagrams/Sitemap.png)
 
 ## WireFrame Examples
 ### index page
