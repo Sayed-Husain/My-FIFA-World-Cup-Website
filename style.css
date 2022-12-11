@@ -158,7 +158,7 @@ ins {
   padding-bottom: 3vh;
   text-align: center;
   color: white;
-  text-shadow: 0.5rem 0.5rem 0.25rem var(--gr-1);
+  text-shadow: 0.5rem 0.5rem 0.25rem var(--gr-1); /* add shadow to the text */
   animation: revealText 0.1s 0.4s forwards;
 }
 
@@ -172,7 +172,7 @@ ins {
   width: 100%;
   height: 100%;
   background-color: var(--gr-2);
-  transform: scaleX(0);
+  transform: scaleX(0); /* not visiable by default*/
   transform-origin: left;
   animation: scaleOverlay 1s forwards cubic-bezier(0.85, 0, 0.15, 1);
 }
@@ -180,7 +180,7 @@ ins {
 /* Animation for the overlay movement*/
 @keyframes scaleOverlay {
   50% {
-    transform: scaleX(1);
+    transform: scaleX(1); /* make the element appear*/
   }
 
   75% {
@@ -189,11 +189,11 @@ ins {
   }
 
   76% {
-    transform-origin: right;
+    transform-origin: right; /* change the transform-orgin to right */
   }
 
   100% {
-    transform: scaleX(0);
+    transform: scaleX(0); /* make the element disappear */
     transform-origin: right;
   }
 }
@@ -201,7 +201,7 @@ ins {
 /* Animation for the apperance of the text*/
 @keyframes revealText {
   to {
-    opacity: 1;
+    opacity: 1; /* make the text appear*/
   }
 }
 
@@ -290,8 +290,6 @@ video {
   width: 60%;
   filter: blur(1px);
   margin: 2rem auto 5rem auto;
-
-  /* style=" height:50vh; width:auto; max-width:80%;"*/
 }
 
 /* Groups css start here*/
@@ -300,7 +298,7 @@ video {
   justify-content:space-between;
   margin-bottom: 3rem;
   width:100%;
-  overflow:scroll;
+  overflow:scroll; /* when content overflow, e.g., in small mobile phones, the user can scroll to see the rest of the content*/
 }
 .knockout{
   align-items: center;
@@ -315,7 +313,7 @@ video {
 
 /* Why special ul css start here*/
 .why-special li{
-  list-style-type:"\26BD";
+  list-style-type:"\26BD"; /* soccer emoji*/
   padding-bottom: 1rem;
   padding-left: 0.5rem;
   margin-left: 5rem;
@@ -395,14 +393,15 @@ dd {
   border-color: black;
 }
 
-.team .overlay {
+
+.team .overlay { /* element with class overlay within element with class team, this element will be sued to give the overlay effect and show the name fo the counrty*/
   position: absolute;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.5); /* rgba to use transparency*/
   color: white;
   width: 100%;
   transition: .5s ease;
-  opacity:0;
+  opacity:0; /* not visible by default*/
   color: white;
   font-size: 2rem;
   padding: 0.1rem;
